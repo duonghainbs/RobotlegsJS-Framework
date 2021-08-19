@@ -22,5 +22,5 @@ export function getQualifiedClassName(value: any): string {
     let classDescriptor: string = value.toString();
     let result: RegExpMatchArray = classDescriptor.match(v3) || classDescriptor.match(v6);
 
-    return result[1];
+    return result !== null && result.length > 1 ? result[1] : '';
 }
